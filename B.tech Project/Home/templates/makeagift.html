@@ -1,0 +1,154 @@
+{% load staticfiles %}
+<html lang="en-us">
+<head>
+	<script src="{% static 'js/gift.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'css/gift.css' %}">
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+    <style>         
+        body{
+            background-color:white;
+        }
+    </style>
+</head	>
+<body>
+<div id="iitbhu">
+                <h1 align="center"> IIT (BHU) Varanasi - Donation</h1>
+</div>
+<div id="TitleBar">
+            <ul id="alumniT">
+                 <a href="../Home"><div class="alumni"><li>HOME<div id="bborder"></div></li></div></a>
+                 <a href="../Reunion"><div class="alumni" name="man" onmouseover="ActiveElement()" onmouseout="ActiveElement1()"><li>ALUMNI REUNION<div id="bborder"></div></li></div></a>
+                 <a href="../AlumniMeet"><div class="alumni" name="man" onmouseover="ActiveElement()" onmouseout="ActiveElement1()"><li>ALUMINI MEET<div id="bborder"></div></li></div></a>
+                 <a href="../Gallery"><div class="alumni" name="man" onmouseover="ActiveElement()" onmouseout="ActiveElement1()"><li>PHOTO GALLARY<div id="bborder"></div></li></div></a>
+                 <a href="../ContactUs"><div class="alumni" name="man" onmouseover="ActiveElement()" onmouseout="ActiveElement1()"><li>CONTACT US<div id="bborder"></div></li></div></a>  
+                 <div id="login" class="alumni"><div onmouseover="ActiveElement()" onmouseout="ActiveElement1()" id="albig1"><li><a href="{{hreg}}" style='color:{{creg}}'>{{reg}}<div id="bborder"></div></a></li><li><a href="../Login/">{{log}}<div id="bborder"></div></a></li></div></div>
+            </ul>
+</div>
+<div onmouseover="ActiveElement(),Click(1)" onmouseout="ActiveElement1(),Click(0)" id="dropd">
+                        <div id="click"><h2 href="">|||</h2></div>
+                        <div id="drop">
+                            <!-- <a href="../AlumniMeet">
+                                <div class="menu" id="menu0">ALUMNI MEET</div></a>
+                            <a href="../Reunion">
+                                <div class="menu" id="menu1">ALUMNI REUNION</div></a>
+                            <a href="../Register">
+                                <div class="menu" id="menu2">REGISTRATION </div></a> -->
+                            <a href="../RegisteredAlumni">
+                                <div class="menu" id="menu3">REGISTARED ALUMNI</div></a>
+                            <a href="../Gallery">
+                                <div class="menu" id="menu4">PHOTO GALLARY</div></a>
+                            <a href="../News&Notifications">
+                                <div class="menu" id="menu5">NEWS AND NOTIFICATOINS</div></a>
+                            <a href="../Chat">
+                                <div class="menu" id="menu6">CHATING</div></a>
+                           <!--  <a href="../UpcomingEvents">
+                                <div class="menu" id="menu7">UPCOMING EVENTS AND PROGRAMS</div></a> -->
+                            <a href="../MakeAGift">
+                                <div class="menu" id="menu8">MAKE A Donation</div></a>
+                            <a href="../OtherLinks">
+                                <div class="menu" id="menu9">IIT BHU OTHER LINKS</div></a>
+                            <a href="../ContactUs">
+                                <div class="menu" id="menu10">CONTACT US</div></a>
+                        </div>
+</div>
+<div id='body2'>
+<div>
+    <h1 id="uniq">YOUR DETAILS</h1>
+    <div id="main">
+            <form action="action_page.php" method="POST" onsubmit="return formreport();">
+            {% csrf_token %}
+            <div id="table">  
+            <table>
+            <tr> 
+                    <td>
+                        <label for="relation">Your Relation with IIT-BHU :</label>
+                    </td>
+                    <td>
+                        <select id="relation" name="relation">
+                        <option>Wellwisher/Supporter</option>
+                        <option value="alumni">Alumni</option>
+                        <option>Student</option>
+                        <option>Parent of student/alumni</option>
+                        <option selected>Faculty/Staff</option>
+                        <option>Other</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="desig">&nbsp;&nbsp;Designation:</label>
+                    </td>
+                    <td>        
+                        <input type="text" id="desig" name="designation" placeholder="Enter Designation" value="">
+                    </td> 
+                </tr>
+                <tr>
+                <td colspan="4">   
+                    <label for="fname">Your Name</label>
+                </td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="left">
+                        <table>
+                        <tr>
+                            <td><input type="text" onblur="chk(this)" id="name" name="firstname" placeholder="First name" class="check"> </td>
+                            <td><input type="text" onblur="chk(this)" id="name" name="middlename" placeholder="Middle name" class="check"></td>
+                            <td><input type="text" onblur="chk(this)" id="name" name="lastname" placeholder="Last name" class="check"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label for="add">Address :</label>
+                    </td>
+                    <td colspan="3">
+                    <input type="text" id="add" placeholder="Enter Address" name="address">
+                    </td>
+                </tr>
+                <tr>
+                        <td>
+                        <label for="state">State/Province :</label>
+                        </td>
+                        <td>
+                        <input type="text" id="state" onblur="chk(this)" class="check" placeholder="Enter State" name="State" value="">  
+                        </td>
+                        <td>
+                        <label for="coun">Country :</label> 
+                        </td>
+                        <td>
+                        <select id="coun" name="country">
+                            <option>India</option>
+                            <option>Other</option>
+                        </select>
+                        </td>
+                </tr>
+                <tr>  
+                        <td>
+                        <label for="e.id">Email :</label>
+                        </td>
+                        <td>
+                        <input type="email" id="e.id" onblur="chk(this)" class="check" placeholder="Enter Mail ID" name="email" value=""> 
+                        </td>
+                        <td>
+                            <label for="no">Contact No.:</label>
+                        </td>
+                        <td>
+                            <input onblur="chk(this)" class="check" type="number" min="1000000000" max="9999999999" placeholder="Enter Contact Number" id="no" name="contact" >
+                        </td>
+                        <tr>
+                        <td>
+                            <label for="no">Amount:</label>
+                        </td>
+                        <td>
+                            <input onblur="chk(this)" class="check" type="number" min="100" max="10000000" placeholder="Enter Donation amount" id="no" name="money" >
+                        </td>
+                        </tr>
+                </tr>       
+            </table>
+            </div>	
+            <center><input type="reset" value="Reset"><input  type="submit" value="Proceed"></center>
+            </form>
+    </div>
+</div>
+</body>
+</html>
+

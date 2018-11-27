@@ -1,0 +1,28 @@
+﻿{% load staticfiles %}
+<html>
+    <head>
+        {% include 'header.html' %}
+        <div id="medial">
+                    <a href="https://www.facebook.com/Official.IITBHUVaranasi/" target="_blank"><img src="{% static 'Images/fb.png' %}"></a>
+                    <a href="https://accounts.google.com/ServiceLogin?hl=en&continue=http%3A%2F%2Fwww.youtube.com%2Fsignin%3Fcontinue_action%3DQUFFLUhqbm1yTVdoWnBBclc2SnI2dGRWc2ZTMno1cVJXZ3xBQ3Jtc0tsTUZBUDhmYi0zN1VITXhUUThLSWVmaGlsVml4LUhUV1llOEJ3ck5IV3lTdlR5Zm9HQkZJMFVQYVgzbmstY3lLU2xOR1JRVVhKWnhRRkJET3JKU2ZBc0c5bmpPSFdkRHNCMEJtT3VKWHlqZTl1TElMYy1GWXh6TW53WHNoeFRJUjNsbXJjS1BzX3Z4LWhZbFVZaEYxOXlXQ2xxWmtSVnJXeXJ5M3FIbkx4TnBZS3dZZXNjT1pBanc4eGhyaTlpVUVOa0lOYkE%253D%26app%3Ddesktop%26feature%3Dsubscribe%26action_handle_signin%3Dtrue%26hl%3Den%26next%3D%252Fchannel%252FUCuTW9ADtgUeJDwKJW9oes9w&passive=true&service=youtube&uilel=3#identifier"><img src="{% static 'Images/youtube.png' %}"></a>
+                    <a href="http://www.twitter.com/"><img src="{% static 'Images/twitter.png' %}"></a>
+        </div>
+
+
+    <div id="page1">
+        <div id="home">
+            <div id="change">
+                    <div id="change1" onclick="Slide(-2)">
+                        <div id="dirl"><h1><<< </h1></div>
+                    </div>
+                    <div id="change2" onclick="Slide(0)">
+                        <div id="dirr"><h1>>>></h1></div>
+                    </div>
+                    <div id="About">
+                        <div style="background-color:black;width:100%;letter-spacing:8px;color:white;"><marquee behavior="alternate">About Us</marquee></div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

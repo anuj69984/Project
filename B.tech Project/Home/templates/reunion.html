@@ -1,0 +1,224 @@
+{% load staticfiles %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/reunion.css' %}">
+    {% include 'header.html' %}
+    <div id="medial">
+        <a href="https://www.facebook.com" target="_blank"><img src="{% static 'Images/fb.png' %}"></a>
+        <a href="www.youtube.com"><img src="{% static 'Images/youtube.png' %}"></a>
+        <a href="www.twitter.com"><img src="{% static 'Images/twitter.png' %}"></a>
+        </div>
+        <div style="padding: 150px 0;">
+            <div id="alumnireunion" id='a22' '>
+                <center>
+                    <form action="../Reunion/" method="POST">
+                        {% csrf_token %}
+                        <table id="ReunionTable" style="background-color:lightgreen;border-radius:5px;padding:1%;margin:1% auto;">
+                            <tr>
+                                <td colspan="3" align="center" style="font-size:100%;color:#1abc9c;"><h1 id='alreu'>PLAN ALUMNI REUNION</h1></td>
+                            </tr>
+                            <tr>
+                                <td width="40%" align="center">
+                                    <label <!--for="Batchtoinvite"-->Batch to invite <span style="color: red;">*</span></label>
+                                </td>
+                                <td width="2%">
+                                    <p>:</p>
+                                </td>
+                                <td>
+                                    <input type="number" Value="2015" min="1985" max="2015" name="Batchtoinvite" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="40%" align="center">
+                                    <label for="Department">Departments to invite <span style="color: red;">*</span></label>
+                                </td>
+                                <td width="2%">
+                                    <p>:</p>
+                                </td>
+                                <td width="58%">
+
+                                    <input type="checkbox" value="Ceramic Engineering">Ceramic Engineering</input><br />
+                                    <input type="checkbox" value="Chemical Engineering and Technology">Chemical Engineering and Technology</input><br />
+                                    <input type="checkbox" value="Civil Engineering">Civil Engineering</input><br />
+                                    <input type="checkbox" value="Computer Science and Engineering" checked="True">Computer Science and Engineering</input><br />
+                                    <input type="checkbox" value="Electrical Engineering">Electrical Engineering</input><br />
+                                    <input type="checkbox" value="Electronics Engineering">Electronics Engineering</input><br />
+                                    <input type="checkbox" value="Mechanical Engineering">Mechanical Engineering</input><br />
+                                    <input type="checkbox" value="Metallurgical Engineering">Metallurgical Engineering</input><br />
+                                    <input type="checkbox" value="Mining Engineering">Mining Engineering</input><br />
+                                    <input type="checkbox" value="Pharmaceutics" checked="True">Pharmaceutics</input><br />
+                                    <input type="checkbox" value="Biochemical Engineering">Biochemical Engineering</input><br />
+                                    <input type="checkbox" value="Biomedical Engineering">Biomedical Engineering</input><br />
+                                    <input type="checkbox" value="Materials Science and Technology">Materials Science and Technology</input><br />
+                                    <input type="checkbox" value="Chemistry">Chemistry</input><br />
+                                    <input type="checkbox" value="Mathematical Sciences">Mathematical Sciences</input><br />
+                                    <input type="checkbox" value="Humanistic Studies">Humanistic Studies</input><br />
+                                    <input type="checkbox" value="Physics">Physics</input><br />
+                                    <input type="checkbox" value="Other">Other</input><br />
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="40%" align="center">
+                                    <label for="Program">Program to invite<span style="color: red;">*</span></label>
+                                </td>
+                                <td width="2%">
+                                    <p>:</p>
+                                </td>
+                                <td width="58%">
+
+                                    <input type="checkbox" value="M.Pharm.">M.Pharm.</input><br />
+                                    <input type="checkbox" value="Ph.D.">Ph.D.</input><br />
+                                    <input type="checkbox" value="M.Tech." checked="True">M.Tech.</input><br />
+                                    <input type="checkbox" value="B.Tech." checked="True">B.Tech.</input><br />
+                                    <input type="checkbox" value="B.Pharm.">B.Pharm.</input><br />
+                                    <input type="checkbox" value="IMD">IMD</input><br />
+                                    <input type="checkbox" value="Post Doctoral Fellow">Post Doctoral Fellow</input><br />
+                                    <input type="checkbox" value="Other">Other</input><br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="40%" align="center">
+                                    <label for="DOR">Date of Reunion<span style="color: red;">*</span></label>
+                                </td>
+                                <td width="2%">
+                                    <p>:</p>
+                                </td>
+                                <td width="58%">
+                                    <input type="date" placeholder="Enter Date of Reunion" name="DOR" value="2018-12-19" required>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="font-size:140%" align="center">
+                                    <b>Venue</b>
+                                </td>
+                                <td width="2%">
+                                    <p></p>
+                                </td>
+                                <td width="58%">
+                                    <label>
+
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="40%" align="center">
+                                    <label for="Addr1">Address Line1<span style="color: red;">*</span></label>
+                                </td>
+                                <td width="2%">
+                                    <p>:</p>
+                                </td>
+                                <td width="58%">
+                                    <input type="text" name="Addr1" value="Swatantrata Bhawan" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="40%" align="center">
+                                    <label for="Addr2">Address Line2</label>
+                                </td>
+                                <td width="2%">
+                                    <p>:</p>
+                                </td>
+                                <td width="58%">
+                                    <input type="text" name="Addr2" value="IIT BHU">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="40%" align="center">
+                                    <label for="State">State<span style="color: red;">*</span></label>
+                                </td>
+                                <td width="2%">
+                                    <p>:</p>
+                                </td>
+                                <td width="58%">
+                                    <select name="State" id="State">
+                                        <option value="Andaman and Nicobar (UT)">Andaman and Nicobar (UT)</option>
+                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                        <option value="Assam">Assam</option>
+                                        <option value="Bihar">Bihar</option>
+                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Gujarat">Gujarat</option>
+                                        <option value="Haryana">Haryana</option>
+                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                        <option value="Jammu &amp; Kashmir">Jammu &amp; Kashmir</option>
+                                        <option value="Jharkhand">Jharkhand</option>
+                                        <option value="Karnataka">Karnataka</option>
+                                        <option value="Kerala">Kerala</option>
+                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                        <option value="Maharashtra">Maharashtra</option>
+                                        <option value="Manipur">Manipur</option>
+                                        <option value="Meghalaya">Meghalaya</option>
+                                        <option value="Mizoram">Mizoram</option>
+                                        <option value="Nagaland">Nagaland</option>
+                                        <option value="Orissa">Orissa</option>
+                                        <option value="Punjab">Punjab</option>
+                                        <option value="Rajasthan">Rajasthan</option>
+                                        <option value="Sikkim">Sikkim</option>
+                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                        <option value="Tripura">Tripura</option>
+                                        <option value="Uttar Pradesh" selected>Uttar Pradesh</option>
+                                        <option value="Uttarakhand">Uttarakhand</option>
+                                        <option value="West Bengal">West Bengal</option>
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                        <option value="Chandigarh (UT)">Chandigarh (UT)</option>
+                                        <option value="Dadra and Nagar Haveli (UT)">Dadra and Nagar Haveli (UT)</option>
+                                        <option value="Daman and Diu (UT)">Daman and Diu (UT)</option>
+                                        <option value="Lakshadweep (UT)">Lakshadweep (UT)</option>
+                                        <option value="Pondicherry (UT)">Pondicherry (UT)</option>
+                                        <option value="Telangana">Telangana</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="40%" align="center">
+                                    <label for="Country">Country<span style="color: red;">*</span></label>
+                                </td>
+                                <td width="2%">
+                                    <p>:</p>
+                                </td>
+                                <td width="58%">
+                                    <select name="Country" id="Country">
+                                        <option value="India" selected>India</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td width="40%" align="center">
+                                    <label for="Subject">Subject<span style="color: red;">*</span></label>
+                                </td>
+                                <td width="2%">
+                                    <p>:</p>
+                                </td>
+                                <td width="58%">
+                                    <input type="text" value="Invitation for Alumni Reunion 2018" name="Subject" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="40%" align="center">
+                                    <label for="Messagetosend">Message<span style="color: red;">*</span></label>
+                                </td>
+                                <td width="2%">
+                                    <p>:</p>
+                                </td>
+                                <td width="58%">
+                                    <textarea rows="20" cols="80" style='width:90%;' name="Message" required>Hello, 
+    You are invited on Alumni Reunion 2018. 
+    please join us ... !</textarea><br />
+                                </td>
+                            </tr>
+
+                        </table>
+                        <input type="reset" value="RESET" name="Reset" id="btn">
+                        <input type="Submit" value="SUBMIT" name="Submit" id="btn">
+                    </form>
+                </center>
+            </div>
+</body>
+</html>

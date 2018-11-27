@@ -1,0 +1,98 @@
+{% load staticfiles %}
+<html lang="en-us">
+<head>
+<link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+<script>
+     /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+        }
+        }
+    }
+    }
+    var m,te=1;
+    function change1(){
+        document.getElementById("imgview").style="background-image:url("+m+");"; 
+        var anbox=document.getElementsByClassName("anbox");
+        for(i=0;i<anbox.length;i++){
+                anbox[i].style="animation:none;opacity:0;";
+        }
+        te=1;
+    }
+    function change(n){
+        m=n;
+        var anbox=document.getElementsByClassName("anbox");
+        for(i=0;i<anbox.length;i++){
+                anbox[i].style="background-image:url("+n+");animation:box"+(i+1).toString()+" 1.5s;";
+        }
+        if(te){
+            document.getElementById("imgview").style="background-image:none;";      
+            te=0;
+            setTimeout("change1()",1499);
+        }
+    }
+
+    </script>
+	{% include 'header.html' %}
+<div id="outer">
+    <div id="outer1">
+        <div class="thumbnails">
+            <div id="img"><img onmouseover="change(this.src)" name="img1" src="../static/Gallery/1.jpg" alt="img"/></div>
+            <div id="img"><img onmouseover="change(this.src)" name="img2" src="../static/Gallery/2.jpg" alt="img"/></div>
+            <div id="img"><img onmouseover="change(this.src)" name="img3" src="../static/Gallery/3.jpg" alt="img"/></div>
+            <div id="img"><img onmouseover="change(this.src)" name="img4" src="../static/Gallery/4.jpg" alt="img"/></div>
+            <div id="img"><img onmouseover="change(this.src)" name="img5" src="../static/Gallery/5.jpg" alt="img"/></div>
+            <div id="img"><img onmouseover="change(this.src)" name="img6" src="../static/Gallery/6.jpg" alt="img"/></div>
+            <div id="img"><img onmouseover="change(this.src)" name="img7" src="../static/Gallery/7.jpg" alt="img"/></div>
+            <div id="img"><img onmouseover="change(this.src)" name="img8" src="../static/Gallery/8.jpg" alt="img"/></div>
+            <div id="img"><img onmouseover="change(this.src)" name="img9" src="../static/Gallery/9.jpg" alt="img"/></div>
+            <div id="img"><img onmouseover="change(this.src)" name="img10" src="../static/Gallery/10.jpg" alt="img"/></div>
+        </div>
+    </div>
+    <div id="outer2">
+        <div class="preview" id="imgview" align="center">
+                <div id="box1"  class="anbox"></div>
+                <div id="box2"  class="anbox"></div>
+                <div id="box3"  class="anbox"></div>
+                <div id="box4"  class="anbox"></div>
+                <div id="box5"  class="anbox"></div>
+                <div id="box6"  class="anbox"></div>
+                <div id="box7"  class="anbox"></div>
+                <div id="box8"  class="anbox"></div>
+                <div id="box9"  class="anbox"></div>
+                <div id="box10" class="anbox"></div>
+                <div id="box11" class="anbox"></div>
+                <div id="box12" class="anbox"></div>
+        </div>
+    </div>
+</div>
+
+<div class="mainbody">
+    <div class="menubox">
+        <div class="dropdown">
+            <div id="myDropdown" class="dropdown-content">
+                 <a href="#celebration">Celebrations</a>
+                 <a href="#convocation">Convocations</a>
+                 <a href="#hostel">Hostels</a>
+                 <a href="#fest">Fests</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+ 

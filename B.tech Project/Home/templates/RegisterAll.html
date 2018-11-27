@@ -1,0 +1,275 @@
+{% load staticfiles %}
+<html>  
+<head>
+    	<link rel="stylesheet" href="{% static 'css/Register.css' %}">
+	<script src="{% static 'js/gift.js' %}"></script>
+	<title>Registration Form</title>
+    {% include 'header.html' %}
+<div id='body2'>
+        <div id="Register">
+        <center>
+        <form action="" method="post" onsubmit="return formreport();">
+        {% csrf_token %}
+        
+        <table id="RegistrationTable">
+            <tr>
+                <td colspan="3" align="center" style="font-size:130%;color:#1abc9c"><h1 id='alre'>{{formname}}</h1></td>
+            </tr>
+            {% for data in form %}
+            {% if data.label != "Profile Image" %}
+            <tr><td>{{data.label}}{% if data.label %}<span style="color: red;">*</span>{% endif %}</td><td>:</td><td>{{ data }}</td><tr>
+            {% endif %}
+            {% endfor %}
+            
+            <!--tr>
+                <td width="20%">
+                    <label for="Campus">Campus</label>
+                </td>
+                <td width="2%">
+                    <p> In this module, Registered Alumni,students and staff members can interact with each other. They can see all the online users.They can  even delete the message that do not want to see anymore. This is implemented using Socket programming.  </p>
+                </td>
+                <td width="78%">
+                    <input type="text" Value="BHU (Varanasi)" name="Campus">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="YearofJoin">Batch Passout Year</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="number" Value="2018" name="YearofJoin">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="Fname">First Name</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="text" class="check" onblur="chk(this)" placeholder="Enter Your First Name" name="Fname">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="Lname">Last Name</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="text" class='check' onblur="chk(this)" placeholder="Enter Your Last Name" name="Lname">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="sex">Gender</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="radio" name="sex" Value="Male" checked>Male</input>
+                    <input type="radio" name="sex" Value="Female">Female</input>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="Marital">Marital Status</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="radio" name="Marital" Value="Single" checked>Single</intput>
+                    <input type="radio" name="Marital" Value="Married">Married</input>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="DOB">Date of Birth</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="date" placeholder="Enter Date Of Birth" name="DOB">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="Mobile">Mobile No</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="number" min="1000000000" max="9999999999" placeholder="Enter Mobile Number" name="Mobile">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="Email">Email ID</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="email" placeholder="Enter Email ID" name="Email" value='@itbhu.ac.in'>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="Status">Current Status</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="radio" name="Status" Value="Working" checked>Working</intput>
+                    <input type="radio" name="Status" Value="Bussiness">Bussiness</input>
+                    <input type="radio" name="Status" Value="Other">Other</input>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="Organisation">Organisation</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="text" placeholder="Enter Organisation" name="Organisation">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="Designation">Designation</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="text" placeholder="Enter Designation" name="Designation">
+                </td>
+            </tr>
+            <tr><td style="padding:20px 5px 5px 0px;font-size:140%"><b>Address</b></td></tr>
+            <tr>
+                <td width="20%">
+                    <label for="Addr1">Address Line1</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="text" name="Addr1">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="Addr2">Address Line2</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="text" name="Addr2">
+                </td>
+            </tr>
+            <tr>    
+                <td width="20%">
+                    <label for="State">State</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <select name="State" id="State">
+                        <option value="1">Andaman and Nicobar (UT)</option>
+                        <option value="2">Arunachal Pradesh</option>
+                        <option value="3">Assam</option>
+                        <option value="4">Bihar</option>
+                        <option value="5">Chhattisgarh</option>
+                        <option value="6">Goa</option>
+                        <option value="7">Gujarat</option>
+                        <option value="8">Haryana</option>
+                        <option value="9">Himachal Pradesh</option>
+                        <option value="10">Jammu &amp; Kashmir</option>
+                        <option value="11">Jharkhand</option>
+                        <option value="12">Karnataka</option>
+                        <option value="13">Kerala</option>
+                        <option value="14">Madhya Pradesh</option>
+                        <option value="15">Maharashtra</option>
+                        <option value="16">Manipur</option>
+                        <option value="17">Meghalaya</option>
+                        <option value="18">Mizoram</option>
+                        <option value="19">Nagaland</option>
+                        <option value="20">Orissa</option>
+                        <option value="21">Punjab</option>
+                        <option value="22">Rajasthan</option>
+                        <option value="23">Sikkim</option>
+                        <option value="24">Tamil Nadu</option>
+                        <option value="25">Tripura</option>
+                        <option value="26" selected>Uttar Pradesh</option>
+                        <option value="27">Uttarakhand</option>
+                        <option value="28">West Bengal</option>
+                        <option value="29">Delhi</option>
+                        <option value="30">Andhra Pradesh</option>
+                        <option value="31">Chandigarh (UT)</option>
+                        <option value="32">Dadra and Nagar Haveli (UT)</option>
+                        <option value="33">Daman and Diu (UT)</option>
+                        <option value="34">Lakshadweep (UT)</option>
+                        <option value="35">Pondicherry (UT)</option>
+                        <option value="36">Telangana</option>
+                        <option value="99">Others</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>    
+                <td width="20%">
+                    <label for="Country">Country</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <select name="Country" id="Country">
+                        <option value="India">India</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="PinCode">Pin Code</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="number" min="100000" value="221005" placeholder="Enter Pin Code" name="PinCode">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <label for="Password">Password</label>
+                </td>
+                <td width="2%">
+                    <p>:</p>
+                </td>
+                <td width="78%">
+                    <input type="password" placeholder="Enter Password" name="Password" class="check" onblur="chk(this)">
+                </td>
+            </tr-->
+        </table>
+        <input type="reset" value="RESET" name="Reset" id="btn">
+        <input type="Submit" value="SUBMIT" name="Submit" id="btn">
+        </form>
+        </center>
+        </div>
+    </div>
+    </body>
+</html>

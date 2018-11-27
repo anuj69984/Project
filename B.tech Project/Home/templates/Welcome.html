@@ -1,0 +1,33 @@
+<html><head><title>Welcome</title>
+<style>		
+			body{background:linear-gradient(24deg,red,blue);overflow:hidden;animation:4s body infinite;}
+			@keyframes body{
+				0%{box-shadow:0 0 2px red;background:linear-gradient(24deg,red,green);}
+				25%{box-shadow:0 0 10px blue;background:linear-gradient(24deg,red,blue);}
+				50%{box-shadow:0 0 200px red;background:linear-gradient(24deg,green,blue);}
+				75%{box-shadow:0 0 10px blue;background:linear-gradient(24deg,red,blue);}
+				100%{box-shadow:0 0 2px red;background:linear-gradient(24deg,gren,red);}
+			}
+			#Home a{color:white;text-decoration:none;font-size:200%;}
+			#a{transition:0.5s;width:100%;height:34%;animation:1s a infinite;}
+			#a:hover{transform:rotateX(360deg);}
+			#Home a:hover{font-size:500%;text-shadow:0 0 10px black;}
+			@keyframes a{
+				0%{box-shadow:0 0 2px red;}
+				25%{box-shadow:0 0 10px blue;}
+				50%{box-shadow:0 0 200px red;}
+				75%{box-shadow:0 0 10px blue;}
+				100%{box-shadow:0 0 2px red;}
+			}
+			#Home{padding-top:6%;width:20%;height:20%;border-radius:120px;text-align:center;margin:16% auto;background:linear-gradient(15deg,red,blue);animation:1s anim linear infinite;}
+			@keyframes anim{
+				0%{box-shadow:0 0 2px red;}
+				25%{box-shadow:0 0 10px blue;}
+				50%{box-shadow:0 0 200px red;}
+				75%{box-shadow:0 0 10px blue;}
+				100%{box-shadow:0 0 2px red;}
+			}
+</style>
+</head>
+<body><div id='home'><a href="/Home"><div id='a'>Welcome</div></a></div></body>
+</html>

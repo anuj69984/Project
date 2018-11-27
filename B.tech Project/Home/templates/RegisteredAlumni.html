@@ -1,0 +1,150 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+<style>
+body {background-image:url("../static/Images/3.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+	 color:white;
+	 background-color:black;
+     margin:0;
+	width:100%;
+height:80%;
+	 }
+
+a:link { color:rgb(00,0,102);
+	text-decoration:none;
+}
+a:hover {color: rgb(0,0,204);
+}
+
+input[type=text] ,select {
+	
+    width: 60%;
+    padding: 12px 20px;
+    margin: 10px 10%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    opacity:1;
+}
+
+input[type=submit] {
+    width: 40%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 30%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity:1;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+	opacity:1;
+}
+
+div {
+    /*position:fixed;*/
+    margin-top:130px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-left:370px;
+    margin-right:370px;
+	opacity: 0.8;
+    align-content:center;
+}
+
+</style>
+<title>
+The Alumni
+</title>
+</head>
+<body background-color="solid black">
+<div align="center" style="position:center">
+	<form autocomplete="on" action="" method="POST">
+        {% csrf_token %}
+		<input type="text" name="searchbox" placeholder="Search" autofocus >
+        
+		<select name="batch" >
+			<option value="unknown">Select Batch</option>
+			<option value="1990">1990</option>
+			<option value="1991">1991</option>
+			<option value="1992">1992</option>
+			<option value="1993">1993</option>
+			<option value="1994">1994</option>
+			<option value="1995">1995</option>
+			<option value="1996">1996</option>
+			<option value="1997">1997</option>
+			<option value="1998">1998</option>
+			<option value="1999">1999</option>
+			<option value="2000">2000</option>
+			<option value="2001">2001</option>
+			<option value="2002">2002</option>
+			<option value="2003">2003</option>
+			<option value="2004">2004</option>
+			<option value="2005">2005</option>
+			<option value="2006">2006</option>
+			<option value="2007">2007</option>
+			<option value="2008">2008</option>
+			<option value="2009">2009</option>
+			<option value="2010">2010</option>
+			<option value="2011">2011</option>
+			<option value="2012">2012</option>
+			<option value="2013">2013</option>
+			<option value="2014">2014</option>
+			<option value="2015">2015</option>
+			<option value="2016">2016</option>
+			<option value="2017">2017</option>
+			<option value="2018">2018</option>
+			<option value="2019">2019</option>
+		</select>
+		<select name="branch">
+			<option value="Ceramic Engineering">Ceramic Engineering</option>
+                        <option value="Chemical Engineering and Technology">Chemical Engineering and Technology</option>
+                        <option value="Civil Engineering">Civil Engineering</option>
+                        <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                        <option value="Electrical Engineering">Electrical Engineering</option>
+                        <option value="Electronics Engineering">Electronics Engineering</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        <option value="Metallurgical Engineering">Metallurgical Engineering</option>
+                        <option value="Mining Engineering">Mining Engineering</option>
+                        <option value="Pharmaceutics">Pharmaceutics</option>
+                        <option value="Biochemical Engineering">Biochemical Engineering</option>
+                        <option value="Biomedical Engineering">Biomedical Engineering</option>
+                        <option value="Materials Science and Technology">Materials Science and Technology</option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Mathematical Sciences">Mathematical Sciences</option>
+                        <option value="Humanistic Studies">Humanistic Studies</option>
+                        <option value="Physics">Physics</option>
+                        <option value="Other">Other</option>
+		</select>
+		<input type="submit" name="submit"  value="Search">
+	</form>
+</div>
+
+<!--table>
+	<tr>
+		<th>Name</th>
+		<th>Batch</th>
+		<th>Branch</th>
+	<tr>
+		<td><a href="anuj.html">Anuj Kumar</a></td>
+		<td>2015</td>
+		<td>CSE</td>
+	<tr>
+		<td><a href="jason.html">Jason Stathom</a></td>
+		<td>2015</td>
+		<td>Mining</td>
+	<tr>
+		<td><a href="arnold.html">Arnold Schwarzanegger</a></td>
+		<td>2015</td>
+		<td>Ceramic</td>
+</!--table-->
+</body>
+</html>

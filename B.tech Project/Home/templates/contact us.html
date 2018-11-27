@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}" >
+    <title>Contact Administrator</title>
+    <script>    
+        function loads(){
+            document.getElementById("page2").style="opacity:1;padding-top:0;margin-bottom:-30px;";
+        }
+    </script>
+
+{% include 'header.html' %}
+<body onload="loads()">
+    <div id="page2">
+	        <div id="topic" >
+                <h3 id="contact">CONTACT Administrator </h3>
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <div id="bx">
+                            <div id="subh"><h2>  ANUJ KUMAR </h2></div>
+                            <p style="background-color:powderblue;"> Roll-15075006  <br> Branch-Computer Science <br> Email-anuj.kumar.cse15@itbhu.ac.in <br> Mob-8419023745</p>
+                        </div>
+                    </td>
+                    
+                </tr>
+            </table>
+    </div>
+        <footer><marquee behavior="alternate">Copyright &copy 2018 IIT (BHU) Varanasi Alumni Association. All Rights Reserved.</marquee></footer>
+</body> 
+</html>

@@ -1,0 +1,13 @@
+{% load staticfiles %}
+<html>  
+<head>
+    	<link rel="stylesheet" href="{% static 'css/Register.css' %}">
+	<script src="{% static 'js/gift.js' %}"></script>
+	<title>Registration Form</title>
+	{% include 'header.html' %}
+	<div id='body2' style="padding-top:8%;">
+    		<a href='../RegisterAlumni'><input type="button" value="Alumni Register"></a>
+    		<a href="../RegisterStaff"><input type="button" value="Staff Register"></a>
+    		<a href="../RegisterStudent"><input type="button" value="Student Register"></a>      	</div>
+</body>
+</html>

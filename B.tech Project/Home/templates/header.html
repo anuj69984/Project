@@ -1,0 +1,50 @@
+{% load staticfiles %} 
+        <link rel="stylesheet" href="{% static 'css/css.css' %}">
+        <script src="{% static 'js/java.js' %}"></script>
+    </head>
+    <body>
+        <div id="iitbhu">
+                <h1 align="center">{{iitbhu}}</h1>
+</div>
+<div id="TitleBar">
+            <ul id="alumniT">
+                 <a href="../Home"><div class="alumni" id={{home}}><li>HOME<div id="bborder"></div></li></div></a>
+                 <!-- <a href="../Register"><div class="alumni" id={{reunion}} name="man" onmouseover="ActiveElement()" onmouseout="ActiveElement1()"><li>REGISTRATION<div id="bborder"></div></li></div></a> -->
+                 <a href="../Chat"><div class="alumni" id={{meet}} name="man" onmouseover="ActiveElement()" onmouseout="ActiveElement1()"><li>CHAT<div id="bborder"></div></li></div></a>
+                 <a href="../Gallery"><div class="alumni" id={{gallery}} name="man" onmouseover="ActiveElement()" onmouseout="ActiveElement1()"><li>PHOTO GALLARY<div id="bborder"></div></li></div></a>
+                 <a href="../ContactUs"><div class="alumni" id={{contact}} name="man" onmouseover="ActiveElement()" onmouseout="ActiveElement1()"><li>CONTACT Administrator<div id="bborder"></div></li></div></a>  
+                <div id="login" class="alumni" id={{register}}><div onmouseover="ActiveElement()" onmouseout="ActiveElement1()" id="albig1"><li><a href="{{hreg}}" style='color:{{creg}}'>{{reg}}<div id="bborder"></div></a></li><li><a href="../Login/">{{log}}<div id="bborder"></div></a></li></div></div>
+            </ul>
+</div>
+<div onmouseover="ActiveElement(),Click(1)" onmouseout="ActiveElement1(),Click(0)" id="dropd">
+                        <div id="click"><h2 href="">|||</h2></div>
+                        <div id="drop">
+                           <!--  <a href="../AlumniMeet">
+                                <div class="menu" id="menu0">ALUMNI MEET</div></a> -->
+                            {% if not user.id %}
+                            <a href="../Register">
+                                <div class="menu" id="menu2">REGISTRATION </div></a>
+                            {% endif %}
+                            <a href="../RegisteredAlumni">
+                                <div class="menu" id="menu3">REGISTARED ALUMNI</div></a>
+                            <a href="../Gallery">
+                                <div class="menu" id="menu4">PHOTO GALLARY</div></a>
+                            <a href="../News&Notifications">
+                                <div class="menu" id="menu5" style="text-overflow: ellipsis;">NEWS AND NOTIFICATOINS</div></a>
+                            <a href="../Chat">
+                                <div class="menu" id="menu6">CHATING</div></a>
+
+                            {% if user.is_superuser %}
+                            <a href="../Reunion">
+                                <div class="menu" id="menu1">ALUMNI REUNION</div></a>    
+                            {% endif %}
+                           <!--  <a href="../UpcomingEvents">
+                                <div class="menu" id="menu7">UPCOMING EVENTS</div></a> -->
+                            <a href="../MakeAGift">
+                                <div class="menu" id="menu8">MAKE A Donation</div></a>
+                            <a href="../OtherLinks">
+                                <div class="menu" id="menu9">IIT BHU OTHER LINKS</div></a>
+                            <a href="../ContactUs/">
+                                <div class="menu" id="menu10">CONTACT Admin</div></a>
+                        </div>
+</div>

@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<html>
+    <head>  
+      <link rel="stylesheet" href="{% static 'css/reunion.css' %}">
+     {% include 'header.html' %}
+            <div id="a1" onmouseover="reunionRtMenu(1)" onmouseout="reunionRtMenu(0)">
+            </div>
+            <div id="a2">
+                    <div id="a21"></div>
+                    <div id="a22"></div>
+            </div>
+            <div id="medial">
+                        <a href="https://www.facebook.com" target="_blank"><img src="{% static 'images/fb.png' %}"></a>
+                        <a href="www.youtube.com"><img src="{% static 'images/youtube.png' %}"></a>
+                        <a href="www.twitter.com"><img src="{% static 'images/twitter.png' %}"></a>
+            </div>
+    </body>
+</html>
