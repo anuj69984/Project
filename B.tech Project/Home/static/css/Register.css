@@ -1,0 +1,46 @@
+#body2::-webkit-scrollbar{
+                display:none;
+}
+#body2{
+                position:fixed;
+                margin-top:136px;
+                width:100%;
+                overflow-y:scroll;
+                height:80%;
+                text-align:center;
+}
+#body2 input[type='button']{
+                width:38%;
+                height:8%;
+                background-color:#4CAF50;
+                border:none;
+                border-radius:5px;
+                color:white;
+                margin:0.5% auto;
+                font-size:120%;
+                display:block;
+                animation: 1s anim;
+}
+@keyframes anim{
+                0%{
+                    margin-top:-50%;
+                }
+                50%{
+                    margin-top:8%;
+                }
+                100%{
+                    margin-top:0.5%;
+                }
+}
+#body2 input[type='button']:hover{
+                background-color:blue;
+                box-shadow:0 0 10px blue;
+}
+#Register{
+                margin-top:10px;
+                border-radius:0;
+                width:90%;
+}
+input[type='text'],input[type='number']{
+                border:2px solid green;
+}

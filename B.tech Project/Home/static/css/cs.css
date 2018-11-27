@@ -1,0 +1,28 @@
+#main{
+    margin: auto;
+    height: 80%;
+    width: 40%;
+    box-shadow: 0 0 5px red;
+    background-color: gainsboro;
+}
+#Vbox,#Hbox{
+    height:400px;
+    width: 200px;
+}
+#Vbox{
+    position: absolute;
+    top:10%;
+    left: 20%;
+    background-color:red;
+    border-radius: 5px;
+}
+#Hbox{
+    position: absolute;
+    background-color: blue;
+    
+}
+#Hbox:hover{
+    transform:rotateX(20deg);
+    transform:rotateY(90deg);
+    transform:rotateZ(20deg);
+}
